@@ -1,30 +1,43 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import { Row, Col } from 'antd';
-import Header from './components/Header';
-import NavLeft from './components/NavLeft';
-import Footer from './components/Footer';
+import React from 'react'
+import { Row, Col } from 'antd'
+// import axios from 'axios'
+import { getRoutesMap, siderRoutes } from './routes'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default class Admin extends React.Component {
-  render() {
+  // componentDidMount () {
+  //   axios({
+  //     // 方法，restfull
+  //     method: 'get',
+  //     // 地址
+  //     url: '/alarm/indicator/query',
+  //     // 返回格式
+  //     responseType: 'json'
+  //   }).then(function (response) {
+  //     // 结果
+  //     console.log(response.data)
+  //   })
+  // }
+  render () {
     return (
-      <div className="container" >
-        <Row className="header" >
+      <div className='container'>
+        <Row className='header'>
           <Header />
         </Row>
-        <Row className="left-to-right" >
-          <Col span={4} className="nav-left" >
+        <Row className='left-to-right'>
+          <Col span={4} className='nav-left'>
             {this.props.children}
           </Col>
-          <Col span={20} className="content-to-footer" >
-            <Row className="content" >
-              <div
-                style={{ border: '1px solid #eee', height: '100%', background: '#fff', boxShadow: '0 2px 4px 0 rgba(0,0,0,0.08)' }}
-              >content</div>
-            </Row>
-            <Row className="footer" >
-              <Footer />
-            </Row>
+          <Col span={20} className='content-to-footer'>
+          <Row className='content'>
+            <div className='route-section'>
+              {getRoutesMap(siderRoutes)}
+            </div>
+          </Row>
+          <Row className='footer'>
+            <Footer />
+          </Row>
           </Col>
         </Row>
       </div>

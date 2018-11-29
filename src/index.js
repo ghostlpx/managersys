@@ -1,23 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import { getRoutesMap, rootRoutes } from './routes';
 import './styles/common.less';
+import Login from './login';
 import Admin from './admin';
-import DataNav from './pages/DataNav';
-import TaskNav from './pages/TaskNav';
-import AnalysisNav from './pages/AnalysisNav';
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(
   <HashRouter>
-    <Admin>
-      <Switch>
-        <Route exact path="/" render={() => <DataNav/>} />
-        <Route path="/data" component={DataNav} />
-        <Route path="/task" component={TaskNav} />
-        <Route path="/analysis" component={AnalysisNav} />
-      </Switch>
-    </Admin>
+    <div>
+      <Route path="/login" component={Login} />
+      <Route path="/admin" render={(props) =>
+        <Admin {...props} >
+          <Switch>
+            {getRoutesMap(rootRoutes)}
+          </Switch>
+        </Admin>
+      }/>
+    </div>
   </HashRouter>,
   document.getElementById('root'));
 

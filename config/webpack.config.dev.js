@@ -71,7 +71,8 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       loader: require.resolve('less-loader'),
       options: {
         modifyVars: {
-          'primary-color': '#3274E6',
+          'primary-color': '#7CDDEF',
+          'border-radius-base': '0px',
         },
         modules: false,
         javascriptEnabled: true,

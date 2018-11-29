@@ -118,5 +118,9 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "devDependencies": {
+    "mockjs": "^1.0.1-beta3"
+  },
+  "proxy": "http://10.104.112.96:8080"
 }
