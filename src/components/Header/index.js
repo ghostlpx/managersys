@@ -12,7 +12,6 @@ export default class Header extends React.Component {
   }
 
   handleClick = (e) => {
-    // console.log('click ', e);
     this.setState({
       current: e.key,
     });
@@ -33,11 +32,11 @@ export default class Header extends React.Component {
     );
     return (
       <Row className="header-layout">
-        <Col span={4} className="logo-section" >
+        <Col span={3} className="logo-section" >
           <img src="./logo.png" alt="数据平台" />
           <span>DSpider</span>
         </Col>
-        <Col span={12} >
+        <Col span={13} >
           <Menu
             className="menu-section"
             onClick={this.handleClick}

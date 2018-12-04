@@ -97,7 +97,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       options: {
         modifyVars: {
           'primary-color': '#7CDDEF',
-          'border-radius-base': '0px',
+          // 'border-radius-base': '0px',
         },
         modules: false,
         javascriptEnabled: true,

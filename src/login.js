@@ -16,7 +16,6 @@ class Login extends React.Component {
           password
         }).then((res) => {
           if (res.status === 200) {
-            console.log(res);
             this.props.history.push('/admin');
           }
         });
@@ -27,12 +26,15 @@ class Login extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-background">
+        <div className="right-top-logo">
+          <img src="./spider_logo.png" alt="数据平台" />
+        </div>
         <div className="login">
           <section className="logo-section">
             <img src="./logo.png" alt="数据平台" />
             <span>DSpider</span>
           </section>
-          <h1>数据调度平台</h1>
+          <h1>数据平台</h1>
           <section className="login-form-section">
             <Form onSubmit={this.handleSubmit} className="login-form">
               <FormItem>
